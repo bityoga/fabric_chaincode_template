@@ -11,13 +11,12 @@ elif [ "$unamestr" = 'FreeBSD' ]; then
    platform='freebsd'
 fi
 
-
 if [ "$platform" = 'linux' ]; then
 
-   sed -i "s/CHAINCODE-NAME/$CHAINCODE_NAME/g" *
+   find ./chaincode/ -type f -exec sed -i "s/CHAINCODE-NAME/$CHAINCODE_NAME/g" {} \;
 
 elif [ "$platform" = 'freebsd' ]; then
 
-  sed -i '.bak' "s/CHAINCODE-NAME/$CHAINCODE_NAME/g" *
+  find ./chaincode/ -type f -exec sed -i '.bak' "s/CHAINCODE-NAME/$CHAINCODE_NAME/g" {} \;
 
 fi
