@@ -7,8 +7,10 @@ CHAINCODE_NAME="CHAINCODE-NAME"
 CHAINCODE_VERSION="1.0"
 PACKAGE_NAME="${CHAINCODE_NAME}.tar.gz"
 CHAINCODE_LABEL="${CHAINCODE_NAME}_${CHAINCODE_VERSION}"
-CHAINCODE_SRC_CODE_PATH="/root/CLI/chaincodes/smart_energy_chaincodes/smart_meter_chaincode/src"
 CHANCODE_LANGUAGE="node"
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"   
+CHAINCODE_DIR=${PWD%/*}
+CHAINCODE_SRC_CODE_PATH="$CHAINCODE_DIR/src"
 
 export ORGANISATION_NAME="hlfMSP"
 export PEER_HOST=peer2

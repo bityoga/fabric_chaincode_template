@@ -3,7 +3,9 @@ set -x #echo on
 
 CHAINCODE_NAME="CHAINCODE-NAME"
 CHAINCODE_VERSION="1.0"
-CHAINCODE_SRC_CODE_PATH="./src"
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"   
+CHAINCODE_DIR=${PWD%/*}
+CHAINCODE_SRC_CODE_PATH="$CHAINCODE_DIR/src"
 
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
