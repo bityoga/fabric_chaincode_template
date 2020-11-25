@@ -3,7 +3,7 @@ set -x #echo on
 
 CHAINCODE_NAME="CHAINCODE-NAME"
 CHANNEL_NAME="appchannel"
-INVOKE_PARAMS='{"Args":["CreateAssetJson",["[\"ark\",\"ark2\",\"10\",\"Buy Energy\"]"]]}'
+INVOKE_PARAMS='{"Args":["CreateAssetJson","srk","1000","InitialCredit"]}'
 
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
