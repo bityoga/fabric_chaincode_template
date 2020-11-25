@@ -6,7 +6,7 @@
 
 const { Contract } = require("fabric-contract-api");
 const AssetUtil = require("./AssetUtil");
-class TestAssetUtilChaincode extends Contract {
+class CHAINCODE_CLASS_NAME extends Contract {
   async InitLedger(ctx) {
     let initialAsset = [];
     return AssetUtil.CreateAssetJson(ctx, JSON.stringify(initialAsset));
@@ -105,4 +105,4 @@ class TestAssetUtilChaincode extends Contract {
   }
 }
 
-module.exports = TestAssetUtilChaincode;
+module.exports = CHAINCODE_CLASS_NAME;
